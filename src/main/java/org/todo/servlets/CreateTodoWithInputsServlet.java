@@ -1,5 +1,6 @@
 package org.todo.servlets;
 
+import org.todo.business.SaveHelper;
 import org.todo.business.Todo;
 import org.todo.business.TodoUser;
 
@@ -36,13 +37,6 @@ public class CreateTodoWithInputsServlet extends HttpServlet {
         String stringImportant = request.getParameter("important");
         String date = request.getParameter("dueDate");
         // important ist einfach Null wenn nicht angekreut. Mühsam...
-
-        System.out.println(title);
-        System.out.println(category);
-        System.out.println(stringImportant);
-        System.out.println("Datum?");
-        System.out.println(date);
-
         try {
             stringImportant = request.getParameter("important");
             if (stringImportant.equals("on")) important = true;
@@ -53,6 +47,9 @@ public class CreateTodoWithInputsServlet extends HttpServlet {
 
         // creation of Todos and save them.
         currentUser.addTodo(determineHighestId()+1, title, category, date, important, false);
+        ServletContext sc = this.getServletContext();
+        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
+        helper.saveUsers();
 
         // send him back to the List
         response.sendRedirect(request.getContextPath() + "/todoListNew.do");

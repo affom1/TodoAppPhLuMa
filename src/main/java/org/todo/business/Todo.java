@@ -1,12 +1,13 @@
 package org.todo.business;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.Objects;
 
-public class Todo {
+public class Todo implements Serializable {
 
     private int id;
     private String title;

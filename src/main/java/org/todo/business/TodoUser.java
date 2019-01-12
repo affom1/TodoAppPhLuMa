@@ -1,15 +1,17 @@
 package org.todo.business;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TodoUser {
+public class TodoUser implements Serializable {
 
     private String name;
     private String password;
     private ArrayList<Todo> todoList;
     private static final AtomicInteger count = new AtomicInteger(0);
+
 
     public TodoUser(String name, String password) {
         this.name = name;
@@ -25,7 +27,7 @@ public class TodoUser {
             //Without date
             todoList.add(new Todo (id, title, category, datum, important, completed));
         }
-                System.out.println("New Todo is created.");
+        System.out.println("New Todo is created.");
     }
 
     public ArrayList<Todo> getTodoList() {

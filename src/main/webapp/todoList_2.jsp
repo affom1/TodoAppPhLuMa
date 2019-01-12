@@ -225,24 +225,24 @@
 											<c:choose>
 												<c:when test="${element.isCompleted()}">
 													<form action="MarkUncompletedNew.do" method="post">
-														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="../../../../ToDO_Marc/web/pictures/check_2_uncomplete.png" alt="Submit" height="50px"></button>
+														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="src/main/resources/pictures/check_2_uncomplete.png" alt="Submit" height="50px"></button>
 													</form>
 												</c:when>
 												<c:otherwise>
 													<form action="MarkCompletedNew.do" method="post">
-														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="../../../../ToDO_Marc/web/pictures/check_2_complete.png" alt="Submit" height="50px"></button>
+														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="pictures\check_2_complete.png" alt="Submit" height="50px"></button>
 													</form>
 												</c:otherwise>
 											</c:choose>
 										</div>
 										<div style = "display: inline-block; width: 30%">
 											<form action="update.do" method="post">
-												<button class = "buttonToDo" type="submit" name="update" value="${element.getId()}"><img src="../../../../ToDO_Marc/web/pictures/check_2_edit.png" alt="Submit" height="50px"></button>
+												<button class = "buttonToDo" type="submit" name="update" value="${element.getId()}"><img src="src/main/resources/pictures/check_2_complete.png" alt="Submit" height="50px"></button>
 											</form>
 										</div>
 										<div style = "display: inline-block; width: 30%">
 											<form action="DeleteNew.do" method="post">
-												<button class = "buttonToDo" type="submit" name="delete" value="${element.getId()}"><img src="../../../../ToDO_Marc/web/pictures/delete_2_delete.png" alt="Submit" height="50px"></button>
+												<button class = "buttonToDo" type="submit" name="delete" value="${element.getId()}"><img src="src/main/resources/pictures/delete_2_delete.png" alt="Submit" height="50px"></button>
 											</form>
 										</div>
 									</div>

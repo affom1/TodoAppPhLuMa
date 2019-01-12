@@ -60,13 +60,12 @@ public class TodoListServlet extends HttpServlet {
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException  {
-        System.out.println("doPost() von TodoListServlet wird aufgerufen");
+
         // Session holen und User holen.
         HttpSession session = request.getSession();
         currentUser  = (TodoUser) session.getAttribute("currentUser");
 
         // gewählte Kategory holen (Standardmässig all, danach gewählt bis Ende Session)
-        System.out.println("choosen Kategory am Anfang der Methode ist: "+choosenCategory);
         choosenCategory = (String) session.getAttribute("choosenCategory");
 
         // Gewählte Kategorie aus dem request holen
@@ -78,15 +77,14 @@ public class TodoListServlet extends HttpServlet {
 
         // WEnn null, dann erneut ziehen von choosen Category
         if (choosenCategory==null) choosenCategory = (String) session.getAttribute("choosenCategory");
-        System.out.println("choosen category aus der Session ist: "+choosenCategory);
 
         // todoListe mit Todos der choosen category füllen
         try {
             if (choosenCategory.equals("all")) {
-                System.out.println("Todo Liste mit allen Todos abfüllen");
+                // Wenn null dann todoListe mit allen Todos abfüllen
                 todoListe = currentUser.getTodoList();
             } else {
-                System.out.println("Todo Liste nur mit den Todos der Kategory "+choosenCategory+" abfüllen");
+                // ansosnten nur mit den Todos der gewählten Kategorie abfüllen
                 todoListe = null;
                 todoListe = new ArrayList<>();
                 for (Todo todo : currentUser.getTodoList()) {
@@ -97,7 +95,7 @@ public class TodoListServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Fehler, aus try/catch gebrochen bei weil? Was is passiert? ");
+            System.out.println("Fehler anschauen! Try catch wurde ausgebrochen und wir nehmen gesamte TodoListe");
             todoListe = currentUser.getTodoList();
         }
 
@@ -114,19 +112,17 @@ public class TodoListServlet extends HttpServlet {
                 return o1.getDueDate().compareTo(o2.getDueDate());
             }
         });
-//        todoListe.sort(Comparator.nullsLast(LocalDate::compareTo).compare(dateOne, dateTwo));
+        //Todo: todoListe mit comparateor NullsLast sortieren
+        //        todoListe.sort(Comparator.nullsLast(LocalDate::compareTo).compare(dateOne, dateTwo));
 
         // Ganzer Teil Kategorienliste (nur für die mögliche Auswahl der Liste, woraus die choosenCategory die schlussendlich gewählt wird)
         kategorienListeErstellen(request);
 
         // Todoliste und choosenCategory in der Session speichern und ans JSP weiterleiten.
         request.setAttribute("todoList", todoListe);
-        System.out.println("choosen Kategory am Ende der Methode ist: "+choosenCategory);
         HttpSession httpSession = request.getSession();
         httpSession.setAttribute("choosenCategory", choosenCategory);
      //   request.setAttribute("choosenCategory", choosenCategory);
-        String test = (String) httpSession.getAttribute("choosenCategory");
-        System.out.println("choosen Kategory am Ende aus der Session: "+test);
         request.getRequestDispatcher("/todoList_2.jsp").forward(request, response);
     }
 

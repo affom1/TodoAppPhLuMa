@@ -1,5 +1,6 @@
 package org.todo.servlets;
 
+import org.todo.business.SaveHelper;
 import org.todo.business.TodoUser;
 
 import javax.servlet.ServletContext;
@@ -45,6 +46,9 @@ public class UpdateTodoWithInputsServlet extends HttpServlet {
                 currentUser.getTodoList().get(i).updateEverythingButId(title, category,date,important);
             }
         }
+        ServletContext sc = this.getServletContext();
+        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
+        helper.saveUsers();
 
         // send him back to the List
         response.sendRedirect(request.getContextPath() + "/todoListNew.do");

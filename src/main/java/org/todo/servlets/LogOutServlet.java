@@ -1,5 +1,8 @@
 package org.todo.servlets;
 
+import org.todo.business.SaveHelper;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +15,11 @@ import java.io.IOException;
 public class LogOutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        //Todos speichern
+        ServletContext sc = this.getServletContext();
+        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
+        helper.saveUsers();
         // Session killen
         req.getSession().invalidate();
         // nach login schicken
