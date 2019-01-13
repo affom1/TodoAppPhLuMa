@@ -148,4 +148,11 @@ public class Todo implements Serializable {
 
     }
 
+
+    @Override
+    public String toString() {
+        return "Todo{" + "id=" + id + ", title='" + title + '\'' + ", category='" + category + '\'' +
+                ", dueDate=" + dueDate + ", important=" + important + ", completed=" + completed + '}';
+    }
+
 }
