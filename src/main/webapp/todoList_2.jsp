@@ -97,15 +97,9 @@
 		.dropdown {
 			position: relative;
 			display: inline-block;
+
 		}
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #f1f1f1;
-			min-width: 160px;
-			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			z-index: 1;
-		}
+
 	</style>
 
 
@@ -184,7 +178,7 @@
 					<c:forEach items="${todoList}" var="element">
 						<div class = "todo">
 							<div class = "todo_inhalt">
-								<div class = "todo_inhalt_text" <c:if test="${element.isOverdue()}">style="border-color: red"</c:if>>
+								<div class = "todo_inhalt_text" <c:if test="${element.isOverdue()}">style="border-color: red"</c:if> >
 									<c:choose>
 										<c:when test="${element.isCompleted()}">
 											<p><s>${element.getTitle()}</s></p>
@@ -225,24 +219,24 @@
 											<c:choose>
 												<c:when test="${element.isCompleted()}">
 													<form action="MarkUncompletedNew.do" method="post">
-														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="src/main/resources/pictures/check_2_uncomplete.png" alt="Submit" height="50px"></button>
+														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="check_2_uncomplete.png" alt="Submit" height="50px"></button>
 													</form>
 												</c:when>
 												<c:otherwise>
 													<form action="MarkCompletedNew.do" method="post">
-														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="pictures\check_2_complete.png" alt="Submit" height="50px"></button>
+														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="src/main/resources/pictures/check_2_complete.png" alt="Submit" height="50px"></button>
 													</form>
 												</c:otherwise>
 											</c:choose>
 										</div>
 										<div style = "display: inline-block; width: 30%">
 											<form action="update.do" method="post">
-												<button class = "buttonToDo" type="submit" name="update" value="${element.getId()}"><img src="src/main/resources/pictures/check_2_complete.png" alt="Submit" height="50px"></button>
+												<button class = "buttonToDo" type="submit" name="update" value="${element.getId()}"><img src="check_2_edit.png" alt="Submit" height="50px"></button>
 											</form>
 										</div>
 										<div style = "display: inline-block; width: 30%">
 											<form action="DeleteNew.do" method="post">
-												<button class = "buttonToDo" type="submit" name="delete" value="${element.getId()}"><img src="src/main/resources/pictures/delete_2_delete.png" alt="Submit" height="50px"></button>
+												<button class = "buttonToDo" type="submit" name="delete" value="${element.getId()}"><img src="delete_2_delete.png" alt="Submit" height="50px"></button>
 											</form>
 										</div>
 									</div>

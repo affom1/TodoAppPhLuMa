@@ -129,11 +129,11 @@ public class Todo implements Serializable {
     }
 
     public boolean isOverdue() {
-       if (dueDate==null) {
-          return false;
-       }
-       if (this.dueDate.isAfter(LocalDate.now())) return false; // das Due Date ist nach heute --> somit NICHT overdue
-       return true;
+
+        if (dueDate==null)return false;
+        if (this.dueDate.isEqual(LocalDate.now())) return false; // am gleichen Tag
+        if (this.dueDate.isAfter(LocalDate.now())) return false; // das Due Date ist nach heute --> somit NICHT overdue
+        return true;
     }
 
     public String stringIsOverdue() {
