@@ -12,6 +12,17 @@ public class TodoUser implements Serializable {
     private ArrayList<Todo> todoList;
     private static final AtomicInteger count = new AtomicInteger(0);
 
+   /* public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }*/
+
+    public TodoUser(){
+
+    }
 
     public TodoUser(String name, String password) {
         this.name = name;
@@ -51,4 +62,16 @@ public class TodoUser implements Serializable {
     }
 
 
+    //Momentan nur für RestServlet Post
+    public void addTodo(Todo todo) {
+        todoList.add(todo);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

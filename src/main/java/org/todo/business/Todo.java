@@ -15,6 +15,12 @@ public class Todo implements Serializable {
     private LocalDate dueDate;
     private boolean important;
     private boolean completed;
+
+    // Konstruktor für jaxb
+    public Todo() {
+
+    }
+
     // Konstruktor mit Datum
     public Todo(int id, String title, String category, String datum, boolean important, boolean completed) {
         this.id = id;
@@ -148,6 +154,9 @@ public class Todo implements Serializable {
 
     }
 
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
 
     @Override
     public String toString() {

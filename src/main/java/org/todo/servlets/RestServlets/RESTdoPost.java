@@ -11,19 +11,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringReader;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Stream;
 
+import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 
-@WebServlet("/api/*")
+
+@WebServlet("/api/users")
 public class RESTdoPost extends HttpServlet {
 
 
     HashMap<String, TodoUser> userHashMap;
     TodoUser currentUser;
-    HttpSession session;
     ServletContext sc;
 
     public void init() {
@@ -33,106 +40,66 @@ public class RESTdoPost extends HttpServlet {
 
     // create a resource
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("TEST");
-        String lastPart = null;
+//        PrintWriter out = response.getWriter();
+//        out.println("TEST");
+//        String lastPart = null;
+//        try {
+//            out.println(request.getRequestURI());
+//            String[] urlParts = request.getRequestURL().toString().split("/");
+//            Stream.of(urlParts).forEach(System.out::println);
+//            lastPart = urlParts[urlParts.length - 1];
+//            Stream.of(lastPart).forEach(System.out::println);
+//        } catch (Exception e) {
+//            response.sendError(415, "unsupported contend type"); // bin ich mir nicht sicher ob der hier hin gehörht..
+//            e.printStackTrace();
+//        }
+        HttpSession session = request.getSession();
+
+        //     try {
+        TodoUser user = null;
         try {
-            out.println(request.getRequestURI());
-            String[] urlParts = request.getRequestURL().toString().split("/");
-            Stream.of(urlParts).forEach(System.out::println);
-            lastPart = urlParts[urlParts.length - 1];
-            Stream.of(lastPart).forEach(System.out::println);
-        } catch (Exception e) {
-            response.sendError(415, "unsupported contend type"); // bin ich mir nicht sicher ob der hier hin gehörht..
+            Unmarshaller unmarshaller = getJAXBContext().createUnmarshaller();
+            user = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), TodoUser.class).getValue();
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
-        if (lastPart.equals("users")) {
-            String name = null;
-            String password = null;
-            try {
-                name = request.getParameter("name");
-                password = request.getParameter("password");
-            } catch (Exception e) {
-                response.sendError(400, "invalied user data");
-                e.printStackTrace();
+
+        //  response.sendError(400, "invalied user data");
+
+//
+   ////     out.println("überprüfen ob user in liste ist");
+
+        boolean korrektesLogin = false;
+        if (userHashMap.containsKey(user.getName())) {
+            if (userHashMap.get(user.getName()).getPassword().equals(user.getPassword())) {
+                System.out.println(userHashMap.get(user.getName()).getName() + " hat sich erfolgreich eingeloggt");
+                this.currentUser = userHashMap.get(user.getName());
+                korrektesLogin = true;
+                // User in Session speichern
+                session.setAttribute("currentUser", currentUser.getName());
+                response.sendError(201, "user registered");
             }
-            out.println("überprüfen ob user in liste ist");
-            boolean korrektesLogin = false;
-            if (userHashMap.containsKey(name)) {
-                if (userHashMap.get(name).getPassword().equals(password)) {
-                    System.out.println(userHashMap.get(name).getName() + " hat sich erfolgreich eingeloggt");
-                    this.currentUser = userHashMap.get(name);
-                    korrektesLogin = true;
-                    // User in Session speichern
-                    session.setAttribute("currentUser", currentUser);
-                    response.sendError(201, "user registered");
-                }
-                if (!korrektesLogin) {
-                    System.out.println("nicht korrektes Login");
-                    response.sendError(409, "a user with the same name already exists");
-                }
-
-
-                //Falls nicht vorhanden automatisch Registrieren
-                else if (!(userHashMap.containsKey(name))) {
-
-                    if (userHashMap.containsKey(name)) {
-                        // Neuen User anlegen und weiterleiten auf Create Todos
-                        currentUser = new TodoUser(name, password);
-                        userHashMap.put(currentUser.getName(), currentUser);
-                        // User in Session speichern
-                        session.setAttribute("currentUser", currentUser);
-                        // Angelegten User speichern
-                        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
-                        helper.saveUsers();
-                        System.out.println("User wurde angelegt und ist in der session");
-                        response.sendError(201, "new user registered");
-                    }
-                }
-
+            if (!korrektesLogin) {
+                System.out.println("nicht korrektes Login");
+                response.sendError(409, "a user with the same name already exists");
             }
         }
-        //post to do neus todo oder update todo
-        if (lastPart.equals("todos")) {
-            System.out.println("test todos");
-
-            // session holen..
-            try {
-                HttpSession session = request.getSession();
-                currentUser = (TodoUser) session.getAttribute("currentUser");
-            } catch (Exception e) {
-                response.sendError(401, "user not authorized");
-                e.printStackTrace();
-            }
-
-
-            // ACHTUNG Title muss mandetory sein...
-            // Todos erstellen, gemäss Input aus Jason
-            boolean important = false;
-            String title = null;
-            String category = null;
-            String date = null;
-            try {
-                title = request.getParameter("title");
-                category = request.getParameter("category");
-                important = Boolean.parseBoolean(request.getParameter("important"));
-                date = request.getParameter("dueDate");
-            } catch (Exception e) {
-                response.sendError(400, "invalid todo data");
-                e.printStackTrace();
-                System.out.println("hat nicht funktionert");
-            }
-            // creation of Todos and save them.
-            currentUser.addTodo(determineHighestId() + 1, title, category, date, important, false);
-            ServletContext sc = this.getServletContext();
+        //Falls nicht vorhanden automatisch Registrieren
+        else if (!(userHashMap.containsKey(user.getName()))) {
+            // Neuen User anlegen und weiterleiten auf Create Todos
+            currentUser = new TodoUser(user.getName(), user.getPassword());
+            userHashMap.put(currentUser.getName(), currentUser);
+            // User in Session speichern
+            session.setAttribute("currentUser", currentUser.getName());
+            // Angelegten User speichern
             SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
             helper.saveUsers();
-
-            // send him back to the List
-            response.sendError(201, "todo added");
+            System.out.println("User wurde angelegt und ist in der session");
+            response.sendError(201, "new user registered");
         }
 
     }
+
 
     public int determineHighestId() {
         int highest = 0; // wenn noch kein Todos exisitert wird die ID 0.
