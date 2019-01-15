@@ -100,20 +100,22 @@ public class TodoListServlet extends HttpServlet {
         }
 
         // Kategorie an das JSP schicken, vorher sortieren
-        Collections.sort(todoListe, new Comparator<Todo>() {
-            @Override
-            public int compare(Todo o1, Todo o2) {
-                if (o1.getDueDate() == null) {
-                    return (o2.getDueDate() == null) ? 0 : 1;
-                }
-                if (o2.getDueDate() == null) {
-                    return -1;
-                }
-                return o1.getDueDate().compareTo(o2.getDueDate());
-            }
-        });
-        //Todo: todoListe mit comparateor NullsLast sortieren
-        //        todoListe.sort(Comparator.nullsLast(LocalDate::compareTo).compare(dateOne, dateTwo));
+//        Collections.sort(todoListe, new Comparator<Todo>() {
+//            @Override
+//            public int compare(Todo o1, Todo o2) {
+//                if (o1.getDueDate() == null) {
+//                    return (o2.getDueDate() == null) ? 0 : 1;
+//                }
+//                if (o2.getDueDate() == null) {
+//                    return -1;
+//                }
+//                return o1.getDueDate().compareTo(o2.getDueDate());
+//            }
+//        });
+
+        // Todo: Sortiert mit Comparator - done. jedoh sind nulls immer noch nicht last.
+        todoListe.stream().sorted()
+                .sorted(Comparator.comparing(Todo::getDueDate, Comparator.nullsLast(Comparator.nullsLast(Comparator.naturalOrder()))));
 
         // Ganzer Teil Kategorienliste (nur für die mögliche Auswahl der Liste, woraus die choosenCategory die schlussendlich gewählt wird)
         kategorienListeErstellen(request);
