@@ -7,18 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e0f793-da14-403f-b6b6-7bc376a30978" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/todo/business/jaxb.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/TodoUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/TodoUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/business/TodoUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/business/TodoUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/SaveHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/SaveHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/Todo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/business/SaveHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/business/SaveHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/business/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/business/Todo.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -104,10 +97,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="156" column="47" selection-start-line="156" selection-start-column="47" selection-end-line="156" selection-end-column="47" />
+            <state relative-caret-position="841">
+              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3914#3915#0" expanded="true" />
                 <element signature="e#3952#3953#0" expanded="true" />
               </folding>
             </state>
@@ -358,8 +352,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547503979392" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JASON Beispiel/json-example" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547504061359" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -486,7 +480,7 @@
       <workItem from="1547279850169" duration="2413000" />
       <workItem from="1547282297177" duration="14557000" />
       <workItem from="1547385932693" duration="29455000" />
-      <workItem from="1547447610331" duration="11961000" />
+      <workItem from="1547447610331" duration="12273000" />
     </task>
     <task id="LOCAL-00001" summary="So ich habe gebastelt und geamcht ich bin leider noch unfähig das das&#10;die rest Schnittstelle läuft jetzt bin ich müde und muss ins bett :-)&#10;beste grüsse">
       <created>1547421867371</created>
@@ -495,13 +489,20 @@
       <option name="project" value="LOCAL" />
       <updated>1547421867371</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="neues update es funktioniert noch alles, REST funktiniert getTodo und post todo mit user, wenn user noch nicht erstellt erstellt es einen!&#10;Aber die ID kann mann sleber setzen ist evt nicht so geeignet.">
+      <created>1547504036075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547504036075</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61448000" />
+    <option name="totallyTimeSpent" value="61760000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -511,7 +512,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4973545" visible="true" weight="0.26963562" />
@@ -525,15 +526,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49878544" weight="0.12611012" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37477797" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37477797" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49959514" weight="0.30017763" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" sideWeight="0.49959514" visible="true" weight="0.30017763" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49959514" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50121456" side_tool="true" weight="0.31083483" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.053285968" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.6749556" />
       <window_info anchor="bottom" id="Application Servers" order="12" weight="0.3285968" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.19893429" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
@@ -592,7 +593,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="So ich habe gebastelt und geamcht ich bin leider noch unfähig das das&#10;die rest Schnittstelle läuft jetzt bin ich müde und muss ins bett :-)&#10;beste grüsse" />
-    <option name="LAST_COMMIT_MESSAGE" value="So ich habe gebastelt und geamcht ich bin leider noch unfähig das das&#10;die rest Schnittstelle läuft jetzt bin ich müde und muss ins bett :-)&#10;beste grüsse" />
+    <MESSAGE value="neues update es funktioniert noch alles, REST funktiniert getTodo und post todo mit user, wenn user noch nicht erstellt erstellt es einen!&#10;Aber die ID kann mann sleber setzen ist evt nicht so geeignet." />
+    <option name="LAST_COMMIT_MESSAGE" value="neues update es funktioniert noch alles, REST funktiniert getTodo und post todo mit user, wenn user noch nicht erstellt erstellt es einen!&#10;Aber die ID kann mann sleber setzen ist evt nicht so geeignet." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
@@ -861,10 +863,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="156" column="47" selection-start-line="156" selection-start-column="47" selection-end-line="156" selection-end-column="47" />
+        <state relative-caret-position="841">
+          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3914#3915#0" expanded="true" />
             <element signature="e#3952#3953#0" expanded="true" />
           </folding>
         </state>
