@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 
 @WebServlet("/api/todos")
-public class RESTdoGet extends HttpServlet {
+public class RESTapiTodosGetPost extends HttpServlet {
     HashMap<String, TodoUser> userHashMap;
 
 

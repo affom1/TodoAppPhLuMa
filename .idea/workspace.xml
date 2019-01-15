@@ -7,14 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3e532c5-0c67-4da6-b5ba-d2297d6e271b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/todoList_2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/todoList_2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/Todo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/TodoListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/TodoListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/business/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/business/Todo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/TodoListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/servlets/TodoListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTdoGet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTdoPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTdoGet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTdoPost.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +28,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoPost.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
@@ -35,19 +37,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoGet.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="148">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+              <folding>
+                <element signature="e#1705#1706#0" expanded="true" />
+                <element signature="e#1739#1740#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="85">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -61,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/todoList_2.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -74,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/Listeners/UserListListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -88,6 +121,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -97,6 +137,9 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/todoList_2.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" />
       </list>
     </option>
   </component>
@@ -119,9 +162,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="width" value="1944" />
-    <option name="height" value="1044" />
+    <option name="x" value="975" />
+    <option name="width" value="956" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -199,6 +242,16 @@
               <item name="TodoAppPhLuMa" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todo" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="RestServlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TodoAppPhLuMa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TodoAppPhLuMa" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -232,8 +285,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547559216901" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547562641974" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JASON Beispiel/json-example" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -397,15 +453,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547556406095</updated>
-      <workItem from="1547556407861" duration="1828000" />
+      <workItem from="1547556407861" duration="5150000" />
     </task>
+    <task id="LOCAL-00001" summary="Neues Workspace">
+      <created>1547559157418</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547559157418</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1828000" />
+    <option name="totallyTimeSpent" value="5150000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-10" y="0" width="1296" height="696" extended-state="0" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -413,7 +477,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30339807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" weight="0.3285968" />
       <window_info anchor="bottom" id="Terminal" />
@@ -425,15 +489,15 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.06394316" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31382978" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" sideWeight="0.49905124" visible="true" weight="0.024291499" />
+      <window_info anchor="right" id="Maven" sideWeight="0.498708" visible="true" weight="0.024271844" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" x="0" y="0" width="273" height="495" id="Documentation" sideWeight="0.5009488" side_tool="true" visible="true" weight="0.024291499" />
+      <window_info anchor="right" x="0" y="0" width="273" height="495" id="Documentation" sideWeight="0.501292" side_tool="true" visible="true" weight="0.024271844" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
@@ -446,21 +510,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Neues Workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neues Workspace" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTdoGet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15423" />
@@ -471,17 +525,10 @@
         <state relative-caret-position="-2703" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/Listeners/UserListListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -496,6 +543,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="142" column="68" selection-start-line="142" selection-start-column="68" selection-end-line="142" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+          <folding>
+            <element signature="e#1705#1706#0" expanded="true" />
+            <element signature="e#1739#1740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
