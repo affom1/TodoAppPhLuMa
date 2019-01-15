@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="webarchive">
+    <output-path>$PROJECT_DIR$/out/artifacts/webarchive</output-path>
+    <root id="archive" name="webarchive.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TodoApp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.moxy:2.7.3" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.core:2.7.3" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.asm:2.7.3" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:2.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.1.3" />
+          <element id="library" level="project" name="Maven: javax.json:javax.json-api:1.1.3" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:2.7.3" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:javax.persistence:2.2.1" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:commonj.sdo:2.1.1" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="TodoApp/web/Web" />
+    </root>
+  </artifact>
+</component>
