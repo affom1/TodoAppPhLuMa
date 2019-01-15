@@ -12,14 +12,9 @@ public class SaveHelper {
 
     public SaveHelper() {
         userHashMap = new HashMap();
-       //createSampleUserWithSampleTodos();
-
     }
 
-    public void loadUserList(){
-
-    }
-
+    // This method was  used initially for creating sample todos.
     public void createSampleUserWithSampleTodos() {
         //User
         TodoUser user = new TodoUser("Freddy Dummy", "1");
@@ -35,6 +30,7 @@ public class SaveHelper {
         userHashMap.get(user.getName()).addTodo(7,"Joggen", "Freizeit", "2019-08-12", true, false);
 
     }
+
     // used when saving for the first time
     public void saveUsers(HashMap<String, TodoUser> userHashMap) {
         this.userHashMap = userHashMap;

@@ -46,7 +46,7 @@ public class CreateTodoWithInputsServlet extends HttpServlet {
         }
 
         // creation of Todos and save them.
-        currentUser.addTodo(determineHighestId()+1, title, category, date, important, false);
+        currentUser.addTodo(currentUser.determineHighestId()+1, title, category, date, important, false);
         ServletContext sc = this.getServletContext();
         SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
         helper.saveUsers();
@@ -55,12 +55,4 @@ public class CreateTodoWithInputsServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/todoListNew.do");
     }
 
-   // Philipp sagt müsste evtl in ein interface denn ich benötige ides auch da wir kein hastag haben?
-    public int determineHighestId() {
-        int highest = 0; // wenn noch kein Todos exisitert wird die ID 0.
-        for (Todo todo : currentUser.getTodoList()) {
-            if (todo.getId() > highest) highest = todo.getId();
-        }
-        return highest;
-    }
 }
