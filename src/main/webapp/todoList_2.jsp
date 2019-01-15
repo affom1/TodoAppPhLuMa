@@ -140,7 +140,7 @@
 			<li class="nav"><a href="newTodo.do" class="nav">Create New Todo</a></li>
 			<li style="float:right" class="nav">
 				<form action="logout.do" method="post">
-					<input type = "image" name = "submit" src = ".pictures/logoff_white.png" border = "0" alt = "Submit" style = "height: 35px;" />
+					<input type = "image" name = "submit" src = "pictures/logoff_white.png" border = "0" alt = "Submit" style = "height: 35px;" />
 				</form>
 			</li>
 		</ul>
@@ -219,24 +219,24 @@
 											<c:choose>
 												<c:when test="${element.isCompleted()}">
 													<form action="MarkUncompletedNew.do" method="post">
-														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="check_2_uncomplete.png" alt="Submit" height="50px"></button>
+														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="pictures/check_2_uncomplete.png" alt="Submit" height="50px"></button>
 													</form>
 												</c:when>
 												<c:otherwise>
 													<form action="MarkCompletedNew.do" method="post">
-														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="src/main/resources/pictures/check_2_complete.png" alt="Submit" height="50px"></button>
+														<button class = "buttonToDo" type="submit" name="complete" value="${element.getId()}"><img src="pictures/check_2_complete.png" alt="Submit" height="50px"></button>
 													</form>
 												</c:otherwise>
 											</c:choose>
 										</div>
 										<div style = "display: inline-block; width: 30%">
 											<form action="update.do" method="post">
-												<button class = "buttonToDo" type="submit" name="update" value="${element.getId()}"><img src="check_2_edit.png" alt="Submit" height="50px"></button>
+												<button class = "buttonToDo" type="submit" name="update" value="${element.getId()}"><img src="pictures/check_2_edit.png" alt="Submit" height="50px"></button>
 											</form>
 										</div>
 										<div style = "display: inline-block; width: 30%">
 											<form action="DeleteNew.do" method="post">
-												<button class = "buttonToDo" type="submit" name="delete" value="${element.getId()}"><img src="delete_2_delete.png" alt="Submit" height="50px"></button>
+												<button class = "buttonToDo" type="submit" name="delete" value="${element.getId()}"><img src="pictures/delete_2_delete.png" alt="Submit" height="50px"></button>
 											</form>
 										</div>
 									</div>

@@ -121,7 +121,7 @@
             <li class="nav"><a href="CreateTodo_2.jsp" class="nav">Create New Todo</a></li>
             <li style="float:right" class="nav">
                 <form action="logout.do" method="post">
-                    <input type = "image" name = "submit" src = "C:\Users\Marc Affolter\IdeaProjects\TodoAppPhLuMa\src\main\resources\pictures\logoff_white.png" border = "0" alt = "Submit" style = "height: 35px;" />
+                    <input type = "image" name = "submit" src = "pictures/logoff_white.png" border = "0" alt = "Submit" style = "height: 35px;" />
                 </form>
             </li>
         </ul>
