@@ -1,12 +1,13 @@
 package org.todo.business;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.Objects;
 
-public class Todo {
+public class Todo implements Serializable {
 
     private int id;
     private String title;
@@ -14,6 +15,12 @@ public class Todo {
     private LocalDate dueDate;
     private boolean important;
     private boolean completed;
+
+    // Konstruktor für jaxb
+    public Todo() {
+
+    }
+
     // Konstruktor mit Datum
     public Todo(int id, String title, String category, String datum, boolean important, boolean completed) {
         this.id = id;
@@ -128,11 +135,11 @@ public class Todo {
     }
 
     public boolean isOverdue() {
-       if (dueDate==null) {
-          return false;
-       }
-       if (this.dueDate.isAfter(LocalDate.now())) return false; // das Due Date ist nach heute --> somit NICHT overdue
-       return true;
+
+        if (dueDate==null)return false;
+        if (this.dueDate.isEqual(LocalDate.now())) return false; // am gleichen Tag
+        if (this.dueDate.isAfter(LocalDate.now())) return false; // das Due Date ist nach heute --> somit NICHT overdue
+        return true;
     }
 
     public String stringIsOverdue() {
@@ -145,6 +152,16 @@ public class Todo {
 
 
 
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Todo{" + "id=" + id + ", title='" + title + '\'' + ", category='" + category + '\'' +
+                ", dueDate=" + dueDate + ", important=" + important + ", completed=" + completed + '}';
     }
 
 }

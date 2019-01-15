@@ -123,6 +123,7 @@
                     <div class = "login_registration_label" onclick="myFunction(2)" style="cursor:pointer;">
                         <h1>Register</h1>
                     </div>
+
                     <div class = "login_registration_form" id = "registration_form" style="display: none;">
                         <form action="LoginAndRegister.do" method="post">
                             <label value = "name_registration">Your name</label><br>
@@ -132,6 +133,10 @@
                             <input type="submit" name="login" value="Registrieren"/>
                         </form>
                     </div>
+
+
+
+
                 </div>
             </section>
 

@@ -1,5 +1,6 @@
 package org.todo.servlets;
 
+import org.todo.business.SaveHelper;
 import org.todo.business.Todo;
 import org.todo.business.TodoUser;
 
@@ -30,12 +31,15 @@ public class MarkUncompletedServlet extends HttpServlet {
 
         // Todos mit entprechender ID als Uncmpleted markieren.
         int id = Integer.parseInt(request.getParameter("complete"));
-        System.out.println("Wir setzen auf Nichtkompletiert bei Element: "+ id);
         for (Todo todo : currentUser.getTodoList()) {
             if (todo.getId()== id) {
                 todo.setCompleted(false);
             }
         }
+        // speichern
+        ServletContext sc = this.getServletContext();
+        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
+        helper.saveUsers();
 
         // send him back to the List
         response.sendRedirect(request.getContextPath() + "/todoListNew.do");

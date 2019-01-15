@@ -13,8 +13,17 @@ import java.io.IOException;
 public class CreateTodoServlet extends HttpServlet {
     TodoUser currentUser;
 
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        // Get User just for name on JSP.
+        HttpSession session = request.getSession();
+        currentUser  = (TodoUser) session.getAttribute("currentUser");
+        // and send him to where to create a new Todo
+        response.sendRedirect(request.getContextPath() + "/CreateTodo_2.jsp");
+    }
+
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         // Get User just for name on JSP.
         HttpSession session = request.getSession();
