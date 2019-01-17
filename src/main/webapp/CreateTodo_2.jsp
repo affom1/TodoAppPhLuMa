@@ -15,7 +15,7 @@
 	<title>Todo App</title>
 
 	<style>
-		html, body {margin: 0; padding: 0; height: 100%;}
+		html, body {font-family: Helvetica; margin: 0; padding: 0; height: 100%;}
 		#container {background: white; position: relative; min-height: 100%;}
 		#header {background: orange; position: fixed; top: 0; width: 100%; height: 100px; overflow: hidden;}
 		#body {background: white; padding-top: 100px; padding-bottom: 20px}
@@ -139,7 +139,7 @@
 						Title<br>
 						<input name = "title" style = "width: 90%;" required><br>
 						Category<br>
-						<input name = "category" style = "width: 90%;" required><br>
+						<input name = "category" style = "width: 90%;"><br>
 						Due Date<br>
 						<input name = "dueDate" style = "width: 90%;" type = "date" ><br>
 						Important<br>

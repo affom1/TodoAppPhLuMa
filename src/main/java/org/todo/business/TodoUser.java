@@ -31,6 +31,7 @@ public class TodoUser implements Serializable {
     }
 
     public void addTodo(int id, String title, String category, String datum, boolean important, boolean completed){
+        if (category.isEmpty()) category = "no specific category";
         if (datum.isEmpty()) {
             // With date
             todoList.add(new Todo (id, title, category, important, completed));
@@ -38,6 +39,7 @@ public class TodoUser implements Serializable {
             //Without date
             todoList.add(new Todo (id, title, category, datum, important, completed));
         }
+
         System.out.println("New Todo is created.");
     }
 
@@ -61,6 +63,13 @@ public class TodoUser implements Serializable {
         return categoryList;
     }
 
+    public int determineHighestId() {
+        int highest = 0; // wenn noch kein Todos exisitert wird die ID 0.
+        for (Todo todo : todoList) {
+            if (todo.getId() > highest) highest = todo.getId();
+        }
+        return highest;
+    }
 
     //Momentan nur für RestServlet Post
     public void addTodo(Todo todo) {

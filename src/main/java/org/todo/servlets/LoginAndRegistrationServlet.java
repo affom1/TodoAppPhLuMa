@@ -74,12 +74,9 @@ public class LoginAndRegistrationServlet extends HttpServlet {
             String password = request.getParameter("passwd_registration");
 
             if (userHashMap.containsKey(name)) {
-                if (userHashMap.get(name).equals(name)) { // Fall User existiert bereits
-                    System.out.println(name + " existiert bereits und kann nicht gewählt werden");
-                    request.setAttribute("errorMessage", "user "+name+" already exists, please try again in section Registration");
-                    RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
-                    rd.forward(request, response);
-                }
+                System.out.println(name + " existiert bereits und kann nicht gewählt werden");
+                request.setAttribute("errorMessage", "User "+name+" already exists, please try again in section Register");
+                request.getRequestDispatcher("/Login.jsp").forward(request,response);
 
             } else { // Neuen User anlegen und weiterleiten auf Create Todos
                 currentUser = new TodoUser(name, password);
@@ -98,11 +95,7 @@ public class LoginAndRegistrationServlet extends HttpServlet {
         }
     }
 
-        protected void doGet (HttpServletRequest request, HttpServletResponse response) throws
-        ServletException, IOException {
 
-
-        }
 
 
 }

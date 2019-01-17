@@ -40,6 +40,7 @@ public class Todo implements Serializable {
         this.important = important;
         this.completed = completed;
     }
+    //Kon
 
     public int getId() {
         return id;
@@ -71,6 +72,7 @@ public class Todo implements Serializable {
     }
     public void updateEverythingButId (String title, String category, String datum, boolean important) {
         this.title=title;
+        if (category.isEmpty()) category = "no specific category";
         this.category=category;
         if (datum.isEmpty()) {
             this.dueDate=null;
