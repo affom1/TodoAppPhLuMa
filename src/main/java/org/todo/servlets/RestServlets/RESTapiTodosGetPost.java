@@ -27,6 +27,7 @@ import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 
 @WebServlet("/api/todos")
 public class RESTapiTodosGetPost extends HttpServlet {
+
     HashMap<String, TodoUser> userHashMap;
 
 
@@ -38,19 +39,16 @@ public class RESTapiTodosGetPost extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Session holen und User holen.
-        TodoUser currentUser = null;
-        try {
-            HttpSession session = request.getSession();
 
-
-            String username = (String) session.getAttribute("currentUser");
+            try {
+               String username = (String)   sc.getAttribute("currentUser");
             if (username == null) {
                 response.sendError(401, "user not autorized");
             }
-            currentUser = userHashMap.get(username);
+            username = String.valueOf(userHashMap.get(username));
+                System.out.println(username);
             Marshaller marshaller = getJAXBContext().createMarshaller();
-            marshaller.marshal(currentUser.getTodoList(), response.getWriter());
+     //       marshaller.marshal(username.  getTodoList(), response.getWriter());
 
 
         } catch (Exception e) {

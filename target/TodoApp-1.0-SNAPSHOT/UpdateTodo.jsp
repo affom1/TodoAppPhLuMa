@@ -15,7 +15,7 @@
     <title>Todo App</title>
 
     <style>
-        html, body {margin: 0; padding: 0; height: 100%;}
+        html, body {font-family: Helvetica; margin: 0; padding: 0; height: 100%;}
         #container {background: white; position: relative; min-height: 100%;}
         #header {background: orange; position: fixed; top: 0; width: 100%; height: 100px; overflow: hidden;}
         #body {background: white; padding-top: 100px; padding-bottom: 20px}
@@ -121,7 +121,7 @@
             <li class="nav"><a href="CreateTodo_2.jsp" class="nav">Create New Todo</a></li>
             <li style="float:right" class="nav">
                 <form action="logout.do" method="post">
-                    <input type = "image" name = "submit" src = "C:\Users\Marc Affolter\IdeaProjects\TodoAppPhLuMa\src\main\resources\pictures\logoff_white.png" border = "0" alt = "Submit" style = "height: 35px;" />
+                    <input type = "image" name = "submit" src = "pictures/logoff_white.png" border = "0" alt = "Submit" style = "height: 35px;" />
                 </form>
             </li>
         </ul>

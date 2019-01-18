@@ -12,13 +12,6 @@ public class TodoUser implements Serializable {
     private ArrayList<Todo> todoList;
     private static final AtomicInteger count = new AtomicInteger(0);
 
-   /* public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }*/
 
     public TodoUser(){
 
@@ -63,6 +56,8 @@ public class TodoUser implements Serializable {
         return categoryList;
     }
 
+
+    // when you send the Id make add +1
     public int determineHighestId() {
         int highest = 0; // wenn noch kein Todos exisitert wird die ID 0.
         for (Todo todo : todoList) {
