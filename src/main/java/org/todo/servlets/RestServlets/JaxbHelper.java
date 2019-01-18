@@ -11,9 +11,10 @@ import java.util.Map;
 public class JaxbHelper {
 
     public static JAXBContext getJAXBContext() throws JAXBException {
+
         Map<String, Object> properties = new HashMap<>();
         properties.put("eclipselink.media-type", "application/json");
         properties.put("eclipselink.json.include-root", false);
         return JAXBContext.newInstance(new Class[]{TodoUser.class, Todo.class}, properties);
-    }
+        }
 }

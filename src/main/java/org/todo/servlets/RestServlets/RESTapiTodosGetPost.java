@@ -28,50 +28,47 @@ import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 @WebServlet("/api/todos")
 public class RESTapiTodosGetPost extends HttpServlet {
 
-    HashMap<String, TodoUser> userHashMap;
-
-
-    ServletContext sc;
+    private HashMap<String, TodoUser> userHashMap;
+    //private ServletContext sc;
+     private TodoUser todoUser;
 
     public void init() {
-        sc = this.getServletContext();
-        userHashMap = (HashMap<String, TodoUser>) sc.getAttribute("users");
+
+     //  userHashMap = (HashMap<String, TodoUser>) sc.getAttribute("users");
+     //   sc = this.getServletContext();
     }
 
+    //print the todos of de current user thrue REST Interface
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-            try {
-               String username = (String)   sc.getAttribute("currentUser");
-            if (username == null) {
-                response.sendError(401, "user not autorized");
-            }
-            username = String.valueOf(userHashMap.get(username));
-                System.out.println(username);
-            Marshaller marshaller = getJAXBContext().createMarshaller();
-     //       marshaller.marshal(username.  getTodoList(), response.getWriter());
+
+        TodoUser currentuser = (TodoUser) request.getAttribute("currentuser");
+        System.out.println(currentuser + " das ist der aktuelle user der die todos aus der liste holt");
 
 
-        } catch (Exception e) {
 
+         Marshaller marshaller = null;
+        try {
+            marshaller = getJAXBContext().createMarshaller();
+        } catch (JAXBException e1) {
+            e1.printStackTrace();
+        }
+        try {
+            marshaller.marshal(currentuser.getTodoList(), response.getWriter());
+            System.out.println("sollte gekommen sein");
+
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
-
-
     }
 
     // create a resource
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("neue Todos werden nun in die Liste geladen!");
 
-        System.out.println("test todos");
-        TodoUser currentUser = null;
-        // session holen..
-        try {
-            HttpSession session = request.getSession();
-            currentUser = userHashMap.get(session.getAttribute("currentUser"));
-        } catch (Exception e) {
-            response.sendError(401, "user not authorized");
-            e.printStackTrace();
-        }
+        TodoUser currentuser = (TodoUser) request.getAttribute("currentuser");
+        System.out.println(currentuser + " das ist der aktuelle user der neue  todos in die liste gibt");
+
         // ACHTUNG Title muss mandetory sein...
         // Todos erstellen, gemäss Input aus Jason
         Todo todo = null;
@@ -79,37 +76,21 @@ public class RESTapiTodosGetPost extends HttpServlet {
             Unmarshaller unmarshaller = getJAXBContext().createUnmarshaller();
             todo = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), Todo.class).getValue();
         } catch (JAXBException e) {
-            e.printStackTrace();
+         response.sendError(406, "unsupported accept type");
+            System.out.println("konnte nicht unmarshallen");
+         e.printStackTrace();
         }
-        currentUser.addTodo(todo);
+        if (todo.getTitle() == null) {
+            response.sendError(406,"unsupported accept type" );
+            System.out.println("kein titel eingegeben");
+        }
 
+        todo.setId(todoUser.determineHighestId());
 
-//            boolean important = false;
-//            String title = null;
-//            String category = null;
-//            String date = null;
-//            try {
-//                title = request.getParameter("title");
-//                category = request.getParameter("category");
-//                important = Boolean.parseBoolean(request.getParameter("important"));
-//                date = request.getParameter("dueDate");
-//            } catch (Exception e) {
-//                response.sendError(400, "invalid todo data");
-//                e.printStackTrace();
-//                System.out.println("hat nicht funktionert");
-//            }
-//            // creation of Todos and save them.
-//            currentUser.addTodo(determineHighestId() + 1, title, category, date, important, false);
-//            ServletContext sc = this.getServletContext();
-//            SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
-//            helper.saveUsers();
-//
-//            // send him back to the List
-//            response.sendError(201, "todo added");
-
-
+        System.out.println(todo);
+        userHashMap.get(currentuser).addTodo(todo);
+        //userHashMap.put(TodoUser.determineHighestId()+1)
     }
-
 
 }
 

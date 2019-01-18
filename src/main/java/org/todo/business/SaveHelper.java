@@ -12,6 +12,7 @@ public class SaveHelper {
 
     public SaveHelper() {
         userHashMap = new HashMap();
+      //  createSampleUserWithSampleTodos();
     }
 
     // This method was  used initially for creating sample todos.

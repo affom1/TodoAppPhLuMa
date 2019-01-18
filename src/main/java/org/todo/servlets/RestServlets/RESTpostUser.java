@@ -51,16 +51,20 @@ public class RESTpostUser extends HttpServlet {
             e.printStackTrace();
         }
 
-
-        // Name and password can not be equal
-        if (user.getName().equals(user.getPassword())) {
-            System.out.println("Passwoerter duerfen nicht mit dem user ubereinstimmen");
+        if (user.getName().trim().isEmpty()) {
+            System.out.println("Pflichtfeld Name");
             response.sendError(400, "invalid user data");
             return;
         }
-        // check for name or and  passwort is empty
-        if (user.getName().isEmpty() || user.getPassword().isEmpty()) {
-            System.out.println("Pflichtfelder");
+        // check for password is null or empty
+        if (user.getPassword().trim().isEmpty()){
+            System.out.println("Pflichtfeld Passwort");
+            response.sendError(400, "invalid user data");
+            return;
+        }
+        // Name and password can not be equal
+        if (user.getName().equals(user.getPassword())) {
+            System.out.println("Passwoerter duerfen nicht mit dem user ubereinstimmen");
             response.sendError(400, "invalid user data");
             return;
         }

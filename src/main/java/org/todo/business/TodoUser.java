@@ -7,9 +7,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TodoUser implements Serializable {
 
+
     private String name;
     private String password;
-    private ArrayList<Todo> todoList;
+    private  ArrayList<Todo> todoList;
     private static final AtomicInteger count = new AtomicInteger(0);
 
 
