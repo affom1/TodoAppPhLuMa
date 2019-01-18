@@ -7,23 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3e532c5-0c67-4da6-b5ba-d2297d6e271b" name="Default Changelist" comment="Angepasste REST Klassennamen">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/SaveHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/SaveHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/JaxbHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/JaxbHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTpostUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTpostUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/business/SaveHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/business/SaveHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/JaxbHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/JaxbHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTpostUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTpostUser.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,16 +17,47 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="647">
+                    <caret line="71" selection-start-line="71" selection-end-line="71" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="63" column="64" lean-forward="true" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
+            <state relative-caret-position="289">
+              <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -49,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1046">
-              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="57">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,48 +75,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/UpdateTodoWithInputsServlet.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/JAXBUnmarshaller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="32" column="62" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="62" />
+            <state relative-caret-position="121">
+              <caret line="350" selection-start-line="350" selection-end-line="350" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/JAXBContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+            <state relative-caret-position="70">
+              <caret line="547" selection-start-line="547" selection-end-line="547" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1130#1131#0" expanded="true" />
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1201#1202#0" expanded="true" />
-                <element signature="e#1232#1233#0" expanded="true" />
-                <element signature="e#1264#1265#0" expanded="true" />
-                <element signature="e#1291#1292#0" expanded="true" />
-                <element signature="e#1904#1905#0" expanded="true" />
-                <element signature="e#1938#1939#0" expanded="true" />
+                <element signature="e#23703#23704#0" expanded="true" />
+                <element signature="e#23765#23766#0" expanded="true" />
+                <element signature="e#63857#63858#0" expanded="true" />
+                <element signature="e#63897#63898#0" expanded="true" />
+                <element signature="e#64601#64602#0" expanded="true" />
+                <element signature="e#64658#64659#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/compiler/AnnotationsProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="146">
+              <caret line="4823" selection-start-line="4823" selection-end-line="4823" />
+              <folding>
+                <element signature="e#242119#242120#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/compiler/Generator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="306" selection-start-line="306" selection-end-line="306" />
+              <folding>
+                <element signature="e#15239#15240#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,6 +129,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-314">
               <caret line="35" column="45" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -136,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/todo/business/SaveHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" />
       </list>
     </option>
@@ -161,10 +189,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="141" />
-    <option name="y" value="543" />
-    <option name="width" value="1349" />
-    <option name="height" value="723" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -277,7 +305,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547849125856" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547852947506" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -449,7 +477,7 @@
       <workItem from="1547726191837" duration="4519000" />
       <workItem from="1547750535630" duration="251000" />
       <workItem from="1547754241897" duration="3049000" />
-      <workItem from="1547759603188" duration="35913000" />
+      <workItem from="1547759603188" duration="39517000" />
     </task>
     <task id="LOCAL-00001" summary="Neues Workspace">
       <created>1547559157418</created>
@@ -472,17 +500,23 @@
       <option name="project" value="LOCAL" />
       <updated>1547814371007</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Angepasste REST Klassennamen">
+      <created>1547849123606</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547849123606</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49993000" />
+    <option name="totallyTimeSpent" value="53597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.89053255" weight="0.024291499" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.89053255" visible="true" weight="0.27044535" />
       <window_info id="Structure" order="1" sideWeight="0.109467454" side_tool="true" weight="0.24966443" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -490,11 +524,11 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Duplicate detector" visible="true" weight="0.053285968" />
+      <window_info anchor="bottom" id="Duplicate detector" weight="0.053285968" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7271255" weight="0.24511546" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.053285968" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7271255" weight="0.37122557" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.94671404" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -600,30 +634,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Neues Workspace" />
-    <MESSAGE value="Angepasste REST Klassennamen" />
     <MESSAGE value="Verison mit filter und neuer Post methode post user ist fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verison mit filter und neuer Post methode post user ist fertig" />
+    <MESSAGE value="Angepasste REST Klassennamen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Angepasste REST Klassennamen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java</url>
-          <line>35</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java</url>
+          <line>17</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java</url>
-          <line>73</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java</url>
+          <line>68</line>
           <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -674,48 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/JAXBContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="588" selection-start-line="588" selection-end-line="588" />
-          <folding>
-            <element signature="e#23765#23766#0" expanded="true" />
-            <element signature="e#63857#63858#0" expanded="true" />
-            <element signature="e#63897#63898#0" expanded="true" />
-            <element signature="e#64601#64602#0" expanded="true" />
-            <element signature="e#64658#64659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/JAXBUnmarshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="1096" selection-start-line="1096" selection-end-line="1096" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/compiler/AnnotationsProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="4819" selection-start-line="4819" selection-end-line="4819" />
-          <folding>
-            <element signature="e#242066#242067#0" expanded="true" />
-            <element signature="e#242119#242120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/compiler/Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="306" selection-start-line="306" selection-end-line="306" />
-          <folding>
-            <element signature="e#15239#15240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/UpdateTodoServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -744,41 +730,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/LoginAndRegistrationServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="41" column="26" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="958">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/Listeners/UserListListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-314">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/UpdateTodoWithInputsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="32" column="62" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -789,20 +744,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/UpdateTodoWithInputsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="63" column="64" lean-forward="true" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="128">
+          <caret line="32" column="62" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -824,10 +769,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/Listeners/UserListListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-314">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/business/Todo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTpostUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/AuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/logging/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="454" selection-start-line="454" selection-end-line="454" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/JaxbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/compiler/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
+          <folding>
+            <element signature="e#15239#15240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/compiler/AnnotationsProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="4823" selection-start-line="4823" selection-end-line="4823" />
+          <folding>
+            <element signature="e#242119#242120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/JAXBContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="547" selection-start-line="547" selection-end-line="547" />
+          <folding>
+            <element signature="e#23703#23704#0" expanded="true" />
+            <element signature="e#23765#23766#0" expanded="true" />
+            <element signature="e#63857#63858#0" expanded="true" />
+            <element signature="e#63897#63898#0" expanded="true" />
+            <element signature="e#64601#64602#0" expanded="true" />
+            <element signature="e#64658#64659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.moxy/2.7.3/org.eclipse.persistence.moxy-2.7.3-sources.jar!/org/eclipse/persistence/jaxb/JAXBUnmarshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="350" selection-start-line="350" selection-end-line="350" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1046">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="57">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
