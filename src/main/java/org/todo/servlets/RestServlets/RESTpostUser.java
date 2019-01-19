@@ -43,6 +43,7 @@ public class RESTpostUser extends HttpServlet {
         // Log in as user or it makes the new Registration as new user if he ist not registred
         TodoUser user = null;
         Unmarshaller unmarshaller = null;
+
         try {
             //import the Jason from the body and makes the stream to TodoUser returns a type TodoUser
             //name and passwort
@@ -51,7 +52,7 @@ public class RESTpostUser extends HttpServlet {
             response.sendError(415, "unsupported content type");
             e.printStackTrace();
         }
-            try {
+        try {
             user = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), TodoUser.class).getValue();
         } catch (JAXBException e) {
             response.sendError(415, "unsupported content type");
@@ -63,8 +64,8 @@ public class RESTpostUser extends HttpServlet {
             response.sendError(400, "invalid user data");
             return;
         }
-        // check for password is null or empty
-        if (user.getPassword().trim().isEmpty()){
+        // check for password is empty
+        if (user.getPassword().trim().isEmpty() ){
             System.out.println("Pflichtfeld Passwort");
             response.sendError(400, "invalid user data");
             return;

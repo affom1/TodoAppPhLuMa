@@ -44,7 +44,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // request the currentUser form AuthenticatinFilter
         TodoUser currentUser = (TodoUser) request.getAttribute("currentuser");
-        System.out.println(currentUser + " das ist der aktuelle user der die todos aus der liste holt");
+        System.out.println(currentUser.getName() + " das ist der aktuelle user der die todos aus der liste holt");
 
         // get the params from the REST GET, it is the paramter null then gives out null
         String categoryParam = request.getQueryString();
@@ -69,7 +69,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
                 e.printStackTrace();
             }
 
-            // only the todos of the choosen categores will be marshallerd to JASON
+            // only the todos of the choosen categores will be marshallerd to JSON
         } else
             try {
                 // splits the Query to the category
@@ -84,7 +84,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
                         todoListe.add(todo);
                     }
                 }
-                // prints the JASON to the Body of the HTTP Request
+                // prints the JSON to the Body of the HTTP Request
                 marshaller.marshal(todoListe, response.getWriter());
                 System.out.println("Es kommen nur die Todos der Katgeorie in parametern");
                 response.sendError(200, "the todos of the specified category, or all todos if no category is specified");
@@ -100,7 +100,6 @@ public class RESTapiTodosGetPost extends HttpServlet {
         System.out.println("neue Todos werden nun in die Liste geladen!");
         TodoUser currentUser = null;
         currentUser = (TodoUser) request.getAttribute("currentuser");
-        System.out.println(currentUser.getName() + " das ist der aktuelle user der neue  todos in die liste gibt");
 
         Todo todo = null;
         Unmarshaller unmarshaller = null;
@@ -109,7 +108,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
         } catch (JAXBException e) {
             e.printStackTrace();
             System.out.println("getJAXBContext wurde abgefagen");
-            response.sendError(400, "invalid todo date");
+            response.sendError(400, "invalid todo data");
         }
         try {
             todo = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), Todo.class).getValue();
@@ -127,13 +126,11 @@ public class RESTapiTodosGetPost extends HttpServlet {
             return;
         }
 
-
         // Before saving the ID must be the highest
-        todo.setId(todoUser.determineHighestId()+1);
-
+        todo.setId(currentUser.determineHighestId()+1);
         System.out.println(todo.getId());
 
-        userHashMap.get(currentUser).addTodo(todo);
+        currentUser.addTodo(todo);
         System.out.println("todo added");
 
         Marshaller marshaller = null;
@@ -152,7 +149,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
             System.out.println("konnte die daten nciht ausgeben");
             e.printStackTrace();
         }
-    }
+    } // Ende doPOst()
 
 }
 

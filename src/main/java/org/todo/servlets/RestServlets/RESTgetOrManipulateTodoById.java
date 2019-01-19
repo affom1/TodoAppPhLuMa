@@ -20,7 +20,7 @@ import java.util.HashMap;
 import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 
 @WebServlet("/api/todos/*")
-public class RESTgetTodoById extends HttpServlet {
+public class RESTgetOrManipulateTodoById extends HttpServlet {
 
     private HashMap<String, TodoUser> userHashMap;
     private TodoUser currentUser;
@@ -31,7 +31,7 @@ public class RESTgetTodoById extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("congrats erfolgreich im doGet von GetByID");
+        System.out.println("congrats erfolgreich im doGet von ManipulateByID");
         // request the currentUser from the request
         currentUser = (TodoUser) request.getAttribute("currentuser");
 
@@ -48,33 +48,33 @@ public class RESTgetTodoById extends HttpServlet {
         }
         // try to get the todo
         Todo currentTodo = null;
-        try {
-            for (Todo todo : currentUser.getTodoList()) {
-                if (todo.getId() == idOfTodo) currentTodo = todo;
-                break;
+
+        for (Todo todo : currentUser.getTodoList()) {
+            if (todo.getId() == idOfTodo) {
+                currentTodo = todo;
             }
-        } catch (Exception e) {
-            System.out.println("todo not found");
+        }
+        if (currentTodo==null) {
             response.sendError(404, "todo not found");
             return;
-        }
-
-        // start Marshaller und schicke die Antwort
-        Marshaller marshaller = null;
-        try {
-            marshaller = getJAXBContext().createMarshaller();
-            marshaller.marshal(currentTodo, response.getWriter());
-            response.sendError(200, "ok");
-        } catch (JAXBException e1) {
-            e1.printStackTrace();
-            response.sendError(406, "unsupported accept type");
-            return;
+        } else {
+            // start Marshaller und schicke die Antwort
+            Marshaller marshaller = null;
+            try {
+                marshaller = getJAXBContext().createMarshaller();
+                marshaller.marshal(currentTodo, response.getWriter());
+                response.sendError(200, "ok");
+            } catch (JAXBException e1) {
+                e1.printStackTrace();
+                response.sendError(406, "unsupported accept type");
+                return;
+            }
         }
 
     } //End of doGet()
 
     public void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Willkommen im doPut");
+        System.out.println("Willkommen im doPut von manipulateById");
 
         // request the currentUser from the request
         currentUser = (TodoUser) request.getAttribute("currentuser");
@@ -92,59 +92,55 @@ public class RESTgetTodoById extends HttpServlet {
         }
         // try to get the todo
         Todo currentTodo = null;
-        try {
-            for (Todo todo : currentUser.getTodoList()) {
-                if (todo.getId() == idOfTodo) currentTodo = todo;
-                break;
+        for (Todo todo : currentUser.getTodoList()) {
+            if (todo.getId() == idOfTodo) {
+                currentTodo = todo;
             }
-        } catch (Exception e) {
-            System.out.println("todo not found");
+
+        }
+        if (currentTodo == null) {
+            System.out.println("Todo not found");
             response.sendError(404, "todo not found");
             return;
+        } else {
+            // create Marshaller
+            Unmarshaller unmarshaller = null;
+            try {
+                unmarshaller = getJAXBContext().createUnmarshaller();
+            } catch (JAXBException e) {
+                e.printStackTrace();
+                System.out.println("getJAXBContext wurde abgefagen");
+                response.sendError(400, "invalid todo data");
+            }
+            // create a temporary Todos and Marshall it into
+            Todo tempTodo = null;
+            try {
+                tempTodo = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), Todo.class).getValue();
+            } catch (JAXBException e) {
+                e.printStackTrace();
+                System.out.println("todo InputStram todo.class wurde abgefangen");
+                response.sendError(400, "invalid todo data");
+            }
+            // Checks if title is set because it is required
+            if (tempTodo.getTitle() == null) {
+                response.sendError(400, "invalid todo data");
+                System.out.println("kein titel eingegeben");
+                return;
+            }
+            // Update and save
+            System.out.println("Hier wird geupdated");
+            currentTodo.setTitle(tempTodo.getTitle());
+            currentTodo.setCategory(tempTodo.getCategory());
+            currentTodo.setDueDate(tempTodo.getDueDate());
+            currentTodo.setCompleted(tempTodo.isCompleted());
+            currentTodo.setImportant(tempTodo.isImportant());
+            ServletContext sc = this.getServletContext();
+            SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
+            helper.saveUsers();
+
+            // send answer
+            response.sendError(204, "todo updated");
+
         }
-
-        // create Marshaller
-        Unmarshaller unmarshaller = null;
-        try {
-            unmarshaller = getJAXBContext().createUnmarshaller();
-        } catch (JAXBException e) {
-            e.printStackTrace();
-            System.out.println("getJAXBContext wurde abgefagen");
-            response.sendError(400, "invalid todo data");
-        }
-
-        // create a temporary Todos and Marshall it into
-        Todo tempTodo = null;
-
-        try {
-            tempTodo = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), Todo.class).getValue();
-        } catch (JAXBException e) {
-            e.printStackTrace();
-            System.out.println("todo InputStram todo.class wurde abgefangen");
-            response.sendError(400, "invalid todo data");
-        }
-        // Checks if title is set because it is required
-        if (tempTodo.getTitle() == null) {
-            response.sendError(400, "invalid todo data");
-            System.out.println("kein titel eingegeben");
-            return;
-        }
-
-        // Update and save
-        System.out.println("Hier wird geupdated");
-        currentTodo.setTitle(tempTodo.getTitle());
-        currentTodo.setCategory(tempTodo.getCategory());
-        currentTodo.setDueDate(tempTodo.getDueDate());
-        currentTodo.setCompleted(tempTodo.isCompleted());
-        currentTodo.setImportant(tempTodo.isImportant());
-        ServletContext sc = this.getServletContext();
-        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
-        helper.saveUsers();
-
-        // send answer
-        response.sendError(204, "todo updated");
-
-
-    } // End of doPost()
-
+    }// End of doPost()
 }
