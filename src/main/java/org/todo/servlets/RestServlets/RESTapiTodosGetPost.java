@@ -10,12 +10,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.html.HTMLDocument;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 
@@ -23,38 +26,64 @@ import static org.todo.servlets.RestServlets.JaxbHelper.getJAXBContext;
 public class RESTapiTodosGetPost extends HttpServlet {
 
     private HashMap<String, TodoUser> userHashMap;
-    //private ServletContext sc;
-     private TodoUser todoUser;
+    private TodoUser todoUser;
+    private ArrayList<Todo> todoListe = new ArrayList<>();
 
-    public void init() {
+    /**
+     *
+     * doGet gives from the currentUser from the AuthenticationFilter all Todos or only
+     * the choosen Params Categroy="choosen category" to the Body of the Http Get in JASON.
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
 
-     //  userHashMap = (HashMap<String, TodoUser>) sc.getAttribute("users");
-     //   sc = this.getServletContext();
-    }
-
-    //print the todos of de current user thrue REST Interface
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+        // request the currentUser form AuthenticatinFilter
         TodoUser currentUser = (TodoUser) request.getAttribute("currentuser");
         System.out.println(currentUser + " das ist der aktuelle user der die todos aus der liste holt");
 
+        // get the params from the REST GET, it is the paramter null then gives out null
+        String category = request.getQueryString();
+        System.out.println("hier ist die gewählte Kategorie " + category);
 
-
-         Marshaller marshaller = null;
+        //starts the Marshaller to change after the todos to Jason
+        Marshaller marshaller = null;
         try {
             marshaller = getJAXBContext().createMarshaller();
         } catch (JAXBException e1) {
             e1.printStackTrace();
         }
-        try {
-            marshaller.marshal(currentUser.getTodoList(), response.getWriter());
-            System.out.println("sollte gekommen sein");
+        // gives all todos to the marshaller
+        if (category == null) {
+            try {
+                marshaller.marshal(currentUser.getTodoList(), response.getWriter());
+                System.out.println("Es kommen alle Todos da category null");
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
 
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
+            // only the todos of the choosen categores will be marshallerd to JASON
+        } else
+            try {
+                todoListe = null;
+                todoListe = new ArrayList<>();
+                for (Todo todo : currentUser.getTodoList()) {
+                    if (todo.getCategory().equals(category)) {
+                        todoListe.add(todo);
+                    }
+                }
+                System.out.println(todoListe.toString());
+
+                marshaller.marshal(todoListe, response.getWriter());
+                System.out.println("Es kommen nur die Todos der Katgeorie in parametern");
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
     }
+
 
     // create a resource
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,6 +91,8 @@ public class RESTapiTodosGetPost extends HttpServlet {
         TodoUser currentUser = null;
         currentUser = (TodoUser) request.getAttribute("currentuser");
         System.out.println(currentUser + " das ist der aktuelle user der neue  todos in die liste gibt");
+
+
 
         Todo todo = null;
 
@@ -74,11 +105,15 @@ public class RESTapiTodosGetPost extends HttpServlet {
             response.sendError(400, "invalid todo date");
             e.printStackTrace();
         }
+
+
+        // Checks if tite is set because it is required
         if (todo.getTitle() == null) {
             response.sendError(406,"unsupported accept type" );
             System.out.println("kein titel eingegeben");
         }
 
+        // Before saving the ID must be the highest
         todo.setId(todoUser.determineHighestId());
 
         System.out.println(todo);

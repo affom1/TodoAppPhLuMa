@@ -1,7 +1,6 @@
 package org.todo.business;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -37,6 +36,7 @@ public class TodoUser implements Serializable {
         System.out.println("New Todo is created.");
     }
 
+    //war Sting habe ich auf Arraylist geädnert hat dies konsequenzen?
     public ArrayList<Todo> getTodoList() {
         return this.todoList;
     }
