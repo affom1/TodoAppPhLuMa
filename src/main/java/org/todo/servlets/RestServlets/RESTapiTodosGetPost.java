@@ -100,24 +100,24 @@ public class RESTapiTodosGetPost extends HttpServlet {
         System.out.println("neue Todos werden nun in die Liste geladen!");
         TodoUser currentUser = null;
         currentUser = (TodoUser) request.getAttribute("currentuser");
-        System.out.println(currentUser + " das ist der aktuelle user der neue  todos in die liste gibt");
+        System.out.println(currentUser.getName() + " das ist der aktuelle user der neue  todos in die liste gibt");
 
         Todo todo = null;
         Unmarshaller unmarshaller = null;
         try {
             unmarshaller = getJAXBContext().createUnmarshaller();
         } catch (JAXBException e) {
+            e.printStackTrace();
             System.out.println("getJAXBContext wurde abgefagen");
             response.sendError(400, "invalid todo date");
-            e.printStackTrace();
         }
         try {
             todo = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), Todo.class).getValue();
 
         } catch (JAXBException e) {
+            e.printStackTrace();
             System.out.println("todo InputStram todo.class wurde abgefangen");
             response.sendError(400, "invalid todo data");
-            e.printStackTrace();
         }
 
         // Checks if tite is set because it is required
@@ -129,12 +129,11 @@ public class RESTapiTodosGetPost extends HttpServlet {
 
 
         // Before saving the ID must be the highest
-        todo.setId(todoUser.determineHighestId());
+        todo.setId(todoUser.determineHighestId()+1);
 
         System.out.println(todo.getId());
 
         userHashMap.get(currentUser).addTodo(todo);
-        response.sendError(200, "todo added");
         System.out.println("todo added");
 
         Marshaller marshaller = null;
@@ -148,6 +147,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
         try {
             marshaller.marshal(todo, response.getWriter());
             System.out.println("geaded todos werden ausgeben");
+            response.sendError(200, "todo added");
         } catch (JAXBException e) {
             System.out.println("konnte die daten nciht ausgeben");
             e.printStackTrace();
