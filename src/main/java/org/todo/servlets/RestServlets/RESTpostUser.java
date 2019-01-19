@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
@@ -41,10 +42,16 @@ public class RESTpostUser extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Log in as user or it makes the new Registration as new user if he ist not registred
         TodoUser user = null;
+        Unmarshaller unmarshaller = null;
         try {
             //import the Jason from the body and makes the stream to TodoUser returns a type TodoUser
             //name and passwort
-            Unmarshaller unmarshaller = getJAXBContext().createUnmarshaller();
+            unmarshaller = getJAXBContext().createUnmarshaller();
+        } catch (JAXBException e) {
+            response.sendError(415, "unsupported content type");
+            e.printStackTrace();
+        }
+            try {
             user = unmarshaller.unmarshal(new StreamSource(request.getInputStream()), TodoUser.class).getValue();
         } catch (JAXBException e) {
             response.sendError(415, "unsupported content type");

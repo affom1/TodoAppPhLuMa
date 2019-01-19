@@ -35,13 +35,8 @@ public class AuthenticationFilter extends HttpFilter {
         if (request.getMethod().equals("GET") || request.getMethod().equals("POST")) {
             try {
                 String authHeader = request.getHeader("Authorization");
-                //  if (authHeader != null) {
-                //        response.sendError(409, "invalid user data");
-                //   }
                 String scheme = authHeader.split(" ")[0];
-                // if (authHeader != null) {
-                //       response.sendError(415, "unsupported content type");
-                //   }
+
                 if (!scheme.equals("Basic")) throw new Exception();
                 String credentials = authHeader.split(" ")[1];
                 credentials = new String(DatatypeConverter.parseBase64Binary(credentials), ISO_8859_1);
@@ -56,6 +51,7 @@ public class AuthenticationFilter extends HttpFilter {
                 }
             } catch (Exception ex) {
                 System.out.println("wenn hier im catch...");
+                response.sendError(401, "user not authorized");
                 response.setStatus(SC_UNAUTHORIZED);
                 return;
             }
