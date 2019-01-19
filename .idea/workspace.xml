@@ -8,11 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d3e532c5-0c67-4da6-b5ba-d2297d6e271b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/business/TodoUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/servlets/RestServlets/RESTapiTodosGetPost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/TodoUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TodoApp-1.0-SNAPSHOT/WEB-INF/classes/org/todo/business/TodoUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/todo/business/TodoUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/todo/business/TodoUser.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+            <state relative-caret-position="203">
+              <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -293,7 +290,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547898575842" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547898860992" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Tetris punktezählung" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -466,7 +463,7 @@
       <workItem from="1547750535630" duration="251000" />
       <workItem from="1547754241897" duration="3049000" />
       <workItem from="1547759603188" duration="39994000" />
-      <workItem from="1547891477971" duration="6990000" />
+      <workItem from="1547891477971" duration="7314000" />
     </task>
     <task id="LOCAL-00001" summary="Neues Workspace">
       <created>1547559157418</created>
@@ -503,11 +500,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547852959553</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Angepasste REST Klassennamen">
+      <created>1547898677876</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547898677876</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61064000" />
+    <option name="totallyTimeSpent" value="61388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -522,7 +526,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7271255" visible="true" weight="0.312611" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7271255" visible="true" weight="0.1616341" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.120781526" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -847,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/todo/servlets/RestServlets/RESTapiTodosGetPost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+        <state relative-caret-position="203">
+          <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
