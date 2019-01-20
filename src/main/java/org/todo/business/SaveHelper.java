@@ -102,11 +102,11 @@ public class SaveHelper {
             fis.close();
         }catch(IOException ioe) {
             System.out.println("File could not be loaded.");
-            ioe.printStackTrace();
+
 
         }catch(ClassNotFoundException c) {
             System.out.println("Class not found");
-            c.printStackTrace();
+
         }
         return userHashMap;
     }

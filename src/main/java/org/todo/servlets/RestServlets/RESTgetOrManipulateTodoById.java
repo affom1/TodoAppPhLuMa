@@ -179,7 +179,6 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
         helper.saveUsers();
 
         // send answer
-        response.sendRedirect("todo removed");
         response.sendError(204, "todo removed");
         return;
     }
