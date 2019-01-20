@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta charset = "UTF-8">
-    <title>Deine ToDo's</title>
+    <title>The Todo Application</title>
 
     <style>
         html, body {font-family: Helvetica;margin: 0; padding: 0; height: 100%;}
@@ -57,6 +57,9 @@
             .login_registration {width: 100%;}
         }
 
+        ul li:before { content:"\2714\0020"; }
+        ul { list-style-type: none; }
+
         .login_registration_label {background: orange; border-radius: 10px;}
         .login_registration_form {border-style: solid; border-width: 3px; border-color: orange; padding: 10px; border-radius: 10px;}
     </style>
@@ -87,7 +90,7 @@
 <div id="container">
     <div id="header">
         <div class = "inhalt inhalt_header">
-            <h1 class = "inhalt_header_font">Deine ToDo's</h1>
+            <h1 class = "inhalt_header_font">Welcome to the Todo Application</h1>
         </div>
         <br>
     </div>
@@ -95,8 +98,13 @@
 
         <div class = "inhalt">
             <section>
-                <h1>Einleitung</h1>
-                <p>Ein Text über das WebApp</p>
+                <h1>What you can do</h1>
+                <h1 style="font-size: 120%;"><ul>
+                    <li>Create  Todos</li>
+                    <li>Manage and filter Todos</li>
+                    <li>Stay well rested with a built in REST-API</li>
+                </ul></h1>
+                <p></p>
             </section>
 
             <section>
@@ -112,7 +120,7 @@
                             <input name = "name_login" style = "width: 90%;" required><br>
                             <label value = "passwd_login">Password</label><br>
                             <input type = "password" name = "passwd_login" style = "width: 90%;" maxlength = "40" required><br><br>
-                            <input type="submit" name="login" value="Anmelden"/>
+                            <input type="submit" name="login" value="Login"/>
                         </form>
                     </div>
                     <c:if test="${not empty errorMessage}">
@@ -130,7 +138,7 @@
                             <input name = "name_registration" style = "width: 90%;" maxlength = "50" required><br>
                             <label value = "passwd_registration">Password</label><br>
                             <input type= "password" name = "passwd_registration" style = "width: 90%;" maxlength = "40" required><br><br>
-                            <input type="submit" name="login" value="Registrieren"/>
+                            <input type="submit" name="login" value="Register"/>
                         </form>
                     </div>
 
@@ -140,10 +148,6 @@
                 </div>
             </section>
 
-            <section>
-                <h1>Video</h1>
-                <p>Demonstration des WebApp</p>
-            </section>
         </div>
     </div>
     <div id="footer">

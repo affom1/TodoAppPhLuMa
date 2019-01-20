@@ -8,8 +8,6 @@ public class SaveHelper {
     HashMap<String, TodoUser> userHashMap;
     final static String ABSOLUTER_SPEICHERORT = System.getProperty("user.home")+"/TodoApp/users.todo";
 
-
-
     public SaveHelper() {
         userHashMap = new HashMap();
       //  createSampleUserWithSampleTodos();

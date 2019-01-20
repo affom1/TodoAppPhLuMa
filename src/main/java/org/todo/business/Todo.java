@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Todo implements Serializable {
 
     private int id;
-    private String title;
+    private String title; // only required Attribute, all others are freiwillig
     private String category;
     private LocalDate dueDate;
     private boolean important;
@@ -79,8 +79,8 @@ public class Todo implements Serializable {
         if (datum.isEmpty()) {
             this.dueDate=null;
         } else {
-            DateTimeFormatter marcFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
-            this.dueDate = LocalDate.parse(datum, marcFormatter);
+            DateTimeFormatter myFormatter = DateTimeFormatter.ISO_LOCAL_DATE;
+            this.dueDate = LocalDate.parse(datum, myFormatter);
         }
         this.important=important;
     }
@@ -118,14 +118,6 @@ public class Todo implements Serializable {
         return important;
     }
 
-    public boolean isImportantAndOverdue() {
-        if ((important) && (isOverdue() )) {
-            return true;
-        }
-
-        return false;
-    }
-
     public void setImportant(boolean important) {
         this.important = important;
     }
@@ -139,7 +131,6 @@ public class Todo implements Serializable {
     }
 
     public boolean isOverdue() {
-
         if (dueDate==null)return false;
         if (this.dueDate.isEqual(LocalDate.now())) return false; // am gleichen Tag
         if (this.dueDate.isAfter(LocalDate.now())) return false; // das Due Date ist nach heute --> somit NICHT overdue
@@ -153,9 +144,6 @@ public class Todo implements Serializable {
             }
         }
         return "false";
-
-
-
     }
 
     public void setDueDate(LocalDate dueDate) {

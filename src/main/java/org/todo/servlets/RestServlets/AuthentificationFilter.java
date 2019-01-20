@@ -18,14 +18,13 @@ import static javax.servlet.http.HttpServletResponse.SC_UNAUTHORIZED;
 
 
 @WebFilter(urlPatterns = { "/api/todos/*","/api/categories"})
-public class AuthenticationFilter extends HttpFilter {
+public class AuthentificationFilter extends HttpFilter {
 
     private HashMap<String, TodoUser> userHashMap;
-    private ServletContext sc;
 
 
     public void init() {
-        sc = this.getServletContext();
+        ServletContext sc = this.getServletContext();
         userHashMap = (HashMap<String, TodoUser>) sc.getAttribute("users");
     }
 
