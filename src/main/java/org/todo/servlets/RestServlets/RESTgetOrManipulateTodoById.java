@@ -25,11 +25,6 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
     private HashMap<String, TodoUser> userHashMap;
     private TodoUser currentUser;
 
-    public void init() {
-
-    }
-
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("congrats erfolgreich im doGet von ManipulateByID");
         // request the currentUser from the request
@@ -140,7 +135,52 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
 
             // send answer
             response.sendError(204, "todo updated");
-
         }
     }// End of doPost()
+
+    public void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Willkommen im doDelete von manipulateById");
+
+        // request the currentUser from the request
+        currentUser = (TodoUser) request.getAttribute("currentuser");
+
+        // get the todo errors if it aint a number or todo does not exist
+        int idOfTodo = -1;
+        try {
+            String id = request.getRequestURL().toString();
+            idOfTodo = Integer.parseInt(id.split("todos/")[1]);
+            System.out.println(idOfTodo);
+        } catch (Exception e) {
+            System.out.println("bad Syntax");
+            response.sendError(415, "unsupported content type");
+            return;
+        }
+        // try to get the todo
+        Todo currentTodo = null;
+
+        for (int i = 0;i<currentUser.getTodoList().size();i++) {
+            if (currentUser.getTodoList().get(i).getId() == idOfTodo) {
+                currentTodo = currentUser.getTodoList().get(i);
+                currentUser.getTodoList().remove(i);
+                System.out.println("Wir löschen Todo der ID: "+idOfTodo);
+                break;
+            }
+        }
+
+        if (currentTodo==null) {
+            System.out.println("Todo not found");
+            response.sendError(404, "todo not found");
+            return;
+        }
+
+        //save
+        ServletContext sc = this.getServletContext();
+        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
+        helper.saveUsers();
+
+        // send answer
+        response.sendRedirect("todo removed");
+        response.sendError(204, "todo removed");
+        return;
+    }
 }

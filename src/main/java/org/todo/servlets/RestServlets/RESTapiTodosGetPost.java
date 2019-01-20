@@ -97,7 +97,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
 
     // create a resource
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("neue Todos werden nun in die Liste geladen!");
+        System.out.println("doPost von TodosGetPost");
         TodoUser currentUser = null;
         currentUser = (TodoUser) request.getAttribute("currentuser");
 

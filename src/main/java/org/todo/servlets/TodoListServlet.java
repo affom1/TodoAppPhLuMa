@@ -136,19 +136,19 @@ public class TodoListServlet extends HttpServlet {
             categoryList.add(currentUser.getTodoList().get(0).getCategory()); //erste Kategorie hinzufügen wenn nicht null
         }
         Iterator<Todo> iterUserlist = currentUser.getTodoList().iterator();
-        Iterator<String> iterCategorylist = categoryList.iterator();
+        boolean doesExistTwice = false;
         while (iterUserlist.hasNext()) {
-           Todo todo = iterUserlist.next(); // hier wird schon weiter iterriert.
+            Todo todo = iterUserlist.next(); // hier wird schon weiter iterriert.
+            // hinzufügen wenn sie nicht bereits existiert
             if (todo.getCategory()!=null) { // Category kann null sein
-                boolean doesExistTwice = false; // hinzufügen wenn sie nicht bereits existiert
                 for (String s : categoryList) {
-                    if (todo.getCategory() == s) {
+                    if (todo.getCategory().equals(s)) {
                         doesExistTwice = true;
                     }
                 }
                 if (!doesExistTwice) categoryList.add(todo.getCategory()); // wenn es nicht zweimal vorkommt hinzufügen
-                doesExistTwice=false; // und wieder richtig setzen.
             }
+            doesExistTwice=false; // und wieder richtig setzen.
         }
 
         // Debugginggeschichte

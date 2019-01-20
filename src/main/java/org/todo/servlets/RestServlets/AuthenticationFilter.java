@@ -17,7 +17,7 @@ import static java.nio.charset.StandardCharsets.ISO_8859_1;
 import static javax.servlet.http.HttpServletResponse.SC_UNAUTHORIZED;
 
 
-@WebFilter(urlPatterns = "/api/todos/*")
+@WebFilter(urlPatterns = { "/api/todos/*","/api/categories"})
 public class AuthenticationFilter extends HttpFilter {
 
     private HashMap<String, TodoUser> userHashMap;
@@ -48,12 +48,14 @@ public class AuthenticationFilter extends HttpFilter {
                 if (userHashMap.get(username).getPassword().equals(password)) {
                     request.setAttribute("currentuser", userHashMap.get(username));
                     System.out.println(username + " : ist der currentuser im Filter");
+                } else {
+                    System.out.println("Falsches Passwort");
+                    throw new Exception();
                 }
-            }
+            } else throw new Exception(); //User nicht in Map
         } catch (Exception ex) {
             System.out.println("wenn hier im catch...");
             response.sendError(SC_UNAUTHORIZED, "user not authorized");
-            response.setStatus(SC_UNAUTHORIZED);
             return;
         }
         // sent him to the Servlets
