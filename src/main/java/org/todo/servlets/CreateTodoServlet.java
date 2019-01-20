@@ -24,7 +24,6 @@ public class CreateTodoServlet extends HttpServlet {
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
         // Get User just for name on JSP.
         HttpSession session = request.getSession();
         currentUser  = (TodoUser) session.getAttribute("currentUser");

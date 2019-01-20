@@ -37,9 +37,9 @@ public class MarkUncompletedServlet extends HttpServlet {
             }
         }
         // speichern
-        ServletContext sc = this.getServletContext();
-        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper");
-        helper.saveUsers();
+        ServletContext sc = this.getServletContext(); // holt den ServletContext
+        SaveHelper helper = (SaveHelper) sc.getAttribute("saveHelper"); // holt den SaveHelper aus dem Kontect, welche die UserHashmap als Attribute hat.
+        helper.saveUsers(); // speichert sie in der User Datei
 
         // send him back to the List
         response.sendRedirect(request.getContextPath() + "/todoListNew.do");

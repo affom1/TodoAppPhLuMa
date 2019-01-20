@@ -12,7 +12,6 @@ public class TodoUser implements Serializable {
     private String name;
     private String password;
     private  ArrayList<Todo> todoList;
-    private static final AtomicInteger count = new AtomicInteger(0);
 
 
     public TodoUser(){
@@ -69,7 +68,7 @@ public class TodoUser implements Serializable {
         return highest;
     }
 
-    //Momentan nur für RestServlet Post
+    // Momentan nur für RestServlet Post
     public void addTodo(Todo todo) {
         todoList.add(todo);
     }

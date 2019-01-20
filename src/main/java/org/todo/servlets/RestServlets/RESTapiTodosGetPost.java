@@ -32,7 +32,7 @@ public class RESTapiTodosGetPost extends HttpServlet {
 
     /**
      *
-     * doGet gives from the currentUser from the AuthenticationFilter all Todos or only
+     *
      * the choosen Params Categroy="choosen category" to the Body of the Http Get in JASON.
      *
      * @param request
