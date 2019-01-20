@@ -13,7 +13,7 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Todo App</title>
+	<title>The Todo Application</title>
 
 	<style>
 		html, body {font-family: Helvetica; margin: 0; padding: 0; height: 100%;}

@@ -31,7 +31,7 @@ public class LoginAndRegistrationServlet extends HttpServlet {
 
         String fall = request.getParameter("login");
         // Fall Anmelden:
-        if (fall.equals("Anmelden")) {
+        if (fall.equals("Login")) {
             // Parameters holen
             String name = request.getParameter("name_login");
             String password = request.getParameter("passwd_login");
@@ -68,7 +68,7 @@ public class LoginAndRegistrationServlet extends HttpServlet {
             }
 
         //Fall Registrieren
-        } else if(fall.equals("Registrieren")) {
+        } else if(fall.equals("Register")) {
             // Parameter holen
             String name = request.getParameter("name_registration");
             String password = request.getParameter("passwd_registration");
