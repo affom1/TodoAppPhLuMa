@@ -25,10 +25,12 @@ public class RESTgetCategories extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Willkommen im doGet() von RESTCategories");
 
         // request the currentUser from the request
         currentUser = (TodoUser) request.getAttribute("currentuser");
+
+        response.setContentType("application/json");
+
 
         // Kategorienliste erstellen
         ArrayList<String> categoryList = new ArrayList<>();

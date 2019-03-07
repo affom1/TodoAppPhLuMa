@@ -2,6 +2,7 @@ package org.todo.servlets.RestServlets;
 
 
 
+import org.eclipse.persistence.jaxb.MarshallerProperties;
 import org.todo.business.Todo;
 import org.todo.business.TodoUser;
 
@@ -44,11 +45,11 @@ public class RESTapiTodosGetPost extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // request the currentUser form AuthenticatinFilter
         TodoUser currentUser = (TodoUser) request.getAttribute("currentuser");
-        System.out.println(currentUser.getName() + " das ist der aktuelle user der die todos aus der liste holt");
 
         // get the params from the REST GET, it is the paramter null then gives out null
         String categoryParam = request.getQueryString();
-        System.out.println("hier ist die gewählte Kategorie " + categoryParam);
+        response.setContentType("application/json");
+
 
         //starts the Marshaller to change after the todos to Jason
         Marshaller marshaller = null;
@@ -59,10 +60,10 @@ public class RESTapiTodosGetPost extends HttpServlet {
             e1.printStackTrace();
         }
         // gives all todos to the marshaller
+
         if (categoryParam == null) {
             try {
                 marshaller.marshal(currentUser.getTodoList(), response.getWriter());
-                System.out.println("Es kommen alle Todos da category null");
                 response.sendError(200, "the todos of the specified category, or all todos if no category is specified");
             } catch (JAXBException e) {
                 response.sendError(406, "unsupported accept type");
@@ -74,7 +75,6 @@ public class RESTapiTodosGetPost extends HttpServlet {
             try {
                 // splits the Query to the category
                 String category = categoryParam.split("=")[1];
-                System.out.println("hier ist die gewählte Kategorie " + category);
 
                 // saves the tods from the choosen category to a new list
                 todoListe = null;
@@ -85,8 +85,12 @@ public class RESTapiTodosGetPost extends HttpServlet {
                     }
                 }
                 // prints the JSON to the Body of the HTTP Request
+                // Set the Marshaller media type to JSON or XML
+
+
+                response.setContentType("application/json");
+
                 marshaller.marshal(todoListe, response.getWriter());
-                System.out.println("Es kommen nur die Todos der Katgeorie in parametern");
                 response.sendError(200, "the todos of the specified category, or all todos if no category is specified");
             } catch (JAXBException e) {
                 response.sendError(406, "unsupported accept type");

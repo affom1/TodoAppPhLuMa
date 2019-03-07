@@ -42,7 +42,6 @@ public class Todo implements Serializable {
         this.important = important;
         this.completed = completed;
     }
-    //Kon
 
     public int getId() {
         return id;

@@ -56,7 +56,7 @@
 		.neu_filter {margin: auto; text-align: center;}
 
 		@media only screen and (min-width: 700px) {
-			.neu_filter {width: 700px;}
+		.neu_filter {width: 700px;}
 		}
 
 		@media only screen and (max-width: 699px) {

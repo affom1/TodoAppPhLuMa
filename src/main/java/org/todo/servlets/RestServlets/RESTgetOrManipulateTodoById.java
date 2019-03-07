@@ -26,9 +26,11 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
     private TodoUser currentUser;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("congrats erfolgreich im doGet von ManipulateByID");
         // request the currentUser from the request
         currentUser = (TodoUser) request.getAttribute("currentuser");
+
+        response.setContentType("application/json");
+
 
         // get the todo errors if it aint a number or todo does not exist
         int idOfTodo = -1;
@@ -37,7 +39,7 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
             idOfTodo = Integer.parseInt(id.split("todos/")[1]);
             System.out.println(idOfTodo);
         } catch (Exception e) {
-            System.out.println("bad Syntax");
+            System.out.println( "bad Syntax");
             response.sendError(406, "unsupported accept type");
             return;
         }
@@ -69,7 +71,6 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
     } //End of doGet()
 
     public void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Willkommen im doPut von manipulateById");
 
         // request the currentUser from the request
         currentUser = (TodoUser) request.getAttribute("currentuser");
@@ -123,7 +124,6 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
                 return;
             }
             // Update and save
-            System.out.println("Hier wird geupdated");
             currentTodo.setTitle(tempTodo.getTitle());
             currentTodo.setCategory(tempTodo.getCategory());
             currentTodo.setDueDate(tempTodo.getDueDate());
@@ -136,10 +136,9 @@ public class RESTgetOrManipulateTodoById extends HttpServlet {
             // send answer
             response.sendError(204, "todo updated");
         }
-    }// End of doPost()
+    }// End of doPut()
 
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Willkommen im doDelete von manipulateById");
 
         // request the currentUser from the request
         currentUser = (TodoUser) request.getAttribute("currentuser");

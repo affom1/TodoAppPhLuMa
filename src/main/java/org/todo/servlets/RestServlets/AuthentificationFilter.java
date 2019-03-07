@@ -33,7 +33,7 @@ public class AuthentificationFilter extends HttpFilter {
             throws IOException, ServletException {
 
         try {
-            System.out.println("Wir sind erfolgreich im Filter gelandet");
+
             String authHeader = request.getHeader("Authorization");
             String scheme = authHeader.split(" ")[0];
 
@@ -46,14 +46,12 @@ public class AuthentificationFilter extends HttpFilter {
             if (userHashMap.containsKey(username)) {
                 if (userHashMap.get(username).getPassword().equals(password)) {
                     request.setAttribute("currentuser", userHashMap.get(username));
-                    System.out.println(username + " : ist der currentuser im Filter");
                 } else {
                     System.out.println("Falsches Passwort");
                     throw new Exception();
                 }
             } else throw new Exception(); //User nicht in Map
         } catch (Exception ex) {
-            System.out.println("wenn hier im catch...");
             response.sendError(SC_UNAUTHORIZED, "user not authorized");
             return;
         }

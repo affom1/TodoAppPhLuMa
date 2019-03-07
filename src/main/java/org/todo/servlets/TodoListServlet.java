@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -113,9 +114,6 @@ public class TodoListServlet extends HttpServlet {
             }
         });
 
-        // Todo: Sortiert mit Comparator - done. jedoh sind nulls immer noch nicht last.
-//        todoListe.stream().sorted()
-//                .sorted(Comparator.comparing(Todo::getDueDate, Comparator.nullsLast(Comparator.nullsLast(Comparator.naturalOrder()))));
 
         // Ganzer Teil Kategorienliste (nur für die mögliche Auswahl der Liste, woraus die choosenCategory die schlussendlich gewählt wird)
         kategorienListeErstellen(request);
@@ -124,7 +122,6 @@ public class TodoListServlet extends HttpServlet {
         request.setAttribute("todoList", todoListe);
         HttpSession httpSession = request.getSession();
         httpSession.setAttribute("choosenCategory", choosenCategory);
-     //   request.setAttribute("choosenCategory", choosenCategory);
         request.getRequestDispatcher("/todoList_2.jsp").forward(request, response);
     }
 
@@ -150,14 +147,6 @@ public class TodoListServlet extends HttpServlet {
             }
             doesExistTwice=false; // und wieder richtig setzen.
         }
-
-        // Debugginggeschichte
-//        System.out.println("und nun die Kategorieliste durchlaufen");
-//        System.out.println("grosse der liste"+categoryList.size());
-//        System.out.println("grosse der Todo liste"+currentUser.getTodoList().size());
-//        for (int i =0;i<categoryList.size();i++) {
-//            System.out.println(categoryList.get(i));
-//        }
 
         // Kategorienliste in der Session speichern, JSP greift auf diese zu.
         session.setAttribute("categoryList", categoryList);
